@@ -1,0 +1,39 @@
+.statement-cards{
+  margin-top: 27px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-rows: 67px;
+  gap: 27px;
+  grid-auto-rows: 67px;
+  width: calc(100vw - 70px - 70px);
+  max-width: 1140px;
+  justify-content: center;
+}
+
+.statement-cards__text{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #FFFFFF;
+  margin: 0;
+
+}
+@media (max-width: 1175px) {
+
+}
+
+@media (max-width: 586px) {
+
+  .statement-cards{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: unset;
+    grid-gap: unset;
+  }
+}

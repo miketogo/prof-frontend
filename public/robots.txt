@@ -1,0 +1,15 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /all-appeals/
+Disallow: /all-counters/
+Disallow: /all-users/
+Disallow: /my-complaints/
+Disallow: /my-statements/
+Disallow: /my-counters/
+Disallow: /survey-results/
+Disallow: /emails-sent/
+Disallow: /add-house/
+Disallow: /profile/
+
+Sitemap: https://prof-uk.ru/sitemap.xml
+Host: https://prof-uk.ru

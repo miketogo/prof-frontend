@@ -1,0 +1,425 @@
+.register{
+    font-family: Inter, Arial, sans-serif;
+    background: #202020;
+    max-width: 396px;
+    width: calc(100% - 442px - 442px);
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+
+.register__greeting{
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+  text-align: center;
+    margin: 40px auto 10px;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+
+.register__logo{
+  justify-content: center;
+  display: flex;
+  transition: opacity 0.3s ease-in-out;
+}
+.register__logo:hover{
+  opacity: 0.8;
+}
+
+.register__form{
+  -webkit-appearance: none;
+  display: flex;
+  flex-direction: column;
+}
+.register__select-container{
+  width: 100%;
+  margin-top: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;       /* Remove default arrow */
+  background-color: #202020;
+  color: #fff;
+  border: none;
+  text-align: unset;
+  text-overflow: ellipsis;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border-bottom: 1px solid #424242;
+  padding: 0 0 10px 1px;
+  transition: border-bottom 0.3s ease-in-out;
+}
+.register__select-item{
+  width: 100%;
+  margin-top: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;       /* Remove default arrow */
+  background-color: #202020;
+  color: #fff;
+  border: none;
+  text-align: unset;
+  text-overflow: ellipsis;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border-bottom: 1px solid #424242;
+  padding: 10px 0 10px 0;
+  transition: border-bottom 0.3s ease-in-out;
+}
+.register__select-item:checked{
+  outline: none;
+  color: #4285F4;
+
+}
+.register__select-item:not(:checked){
+  width: 100%;
+  margin-top: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;       /* Remove default arrow */
+  background-color: #202020;
+  color: #fff;
+  border: none;
+  text-align: unset;
+  text-overflow: ellipsis;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border-bottom: 1px solid #424242;
+  padding: 10px 0 10px 1px;
+  transition: border-bottom 0.3s ease-in-out;
+}
+.register__select-item:hover{
+  width: 100%;
+  margin-top: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;       /* Remove default arrow */
+  background-color: #202020;
+  color: #fff;
+  border: none;
+  text-align: unset;
+  text-overflow: ellipsis;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border-bottom: 1px solid #424242;
+  padding: 0 0 10px 1px;
+  transition: border-bottom 0.3s ease-in-out;
+}
+.register__select-container:focus{
+  outline: none;
+  border-bottom: 1px solid #4285F4;
+}
+.register__input-title{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  margin: 0;
+  padding: 0;
+  color: #8B8B8B;
+  display: flex;
+  position: relative;
+}
+
+.register__input{
+  caret-color: white;
+  -webkit-appearance: none;
+  width: 100%;
+  background-color: unset;
+  font: unset;
+  text-rendering: unset;
+  letter-spacing: unset;
+  word-spacing: unset;
+  text-transform: unset;
+  text-indent: unset;
+  text-shadow: unset;
+  display: unset;
+  text-align: unset;
+  appearance: unset;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  border-bottom: 1px solid #424242;
+  color: #FFFFFF;
+  padding: 0 0 10px 1px;
+  margin-top: 5px;
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+.register__input:focus {
+  outline: none;
+  border-bottom: 1px solid #4285F4;
+}
+
+.register__input-container{
+ width: 100%;
+ margin-top: 24px;
+}
+
+.register__input-container:first-of-type{
+  margin-top: 0;
+ }
+
+
+.register__submit-button{
+  width: 100%;
+  height: 45px;
+  background: #4285F4;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  text-align: center;
+
+  /* identical to box height */
+  text-decoration: none;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.register__submit-button:focus {
+  outline: none;
+}
+.register__submit-button:hover {
+  opacity: 0.8;
+}
+
+.register__submit-button_disabled{
+  background: #F8F8F8;
+  color: #C2C2C2;
+  cursor: not-allowed;
+}
+.register__next-button_disabled:hover{
+  opacity: 1;
+}
+
+.register__next-button{
+  width: 100%;
+  height: 45px;
+  background: #4285F4;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  text-align: center;
+
+  /* identical to box height */
+  text-decoration: none;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin-top: 200px;
+}
+.register__next-button:focus {
+  outline: none;
+}
+.register__next-button:hover {
+  opacity: 0.8;
+}
+
+.register__next-button_disabled{
+  background: #F8F8F8;
+  color: #C2C2C2;
+  cursor: not-allowed;
+}
+.register__next-button_disabled:hover{
+  opacity: 1;
+}
+
+.register__api-error{
+  margin-top: 79px;
+  font-style: normal;
+font-weight: normal;
+font-size: 11px;
+line-height: 13px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FF004C;
+}
+.register__step-title{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+  margin: 0 ;
+
+  padding: 0;
+}
+.register__step{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #8B8B8B;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.register__step-back{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #8B8B8B;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+.register__step-back:hover{
+  opacity: 0.7;
+}
+.register__step-container{
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 0 20px 0;
+}
+.register__auth-text{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #8B8B8B;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+.register__auth-link:hover {
+  opacity: 0.7;
+}
+
+.register__auth-link{
+  text-decoration: none;
+  color: #4285F4;;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.register__auth-text-container{
+ margin-top: 16px;
+}
+.register__error{
+  font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 12px;
+margin: 6px 0 0;
+color: #EE3465;
+}
+.register__submit-button_active{
+
+}
+.register__show-pass{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  right: 0;
+  top: 0;
+
+}
+
+@media (max-width: 1175px) {
+  .register{
+    max-width: 396px;
+    width: calc(100% - 186px - 186px);
+    padding: 232px 0;
+}
+.register__step-title{
+
+  font-size: 14px;
+
+
+}
+.register__step{
+
+  font-size: 12px;
+
+}
+.register__step-back{
+  font-size: 12px;
+}
+}
+@media (max-width: 700px) {
+  .register{
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100% - 30px - 30px);
+    width: calc(100% - 30px - 30px);
+    padding: 56px 0 30px;
+}
+.register__submit-button{
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.register__next-button{
+  margin-top: 100px;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.register__auth-text{
+  font-size: 12px;
+  line-height: 15px;
+}
+.register__greeting{
+  margin: 50px auto 40px;
+}
+.register__logo{
+  justify-content: center;
+}
+.register__logo:hover{
+  opacity: 1;
+}
+.register__select-item:hover{
+  opacity: 1;
+}
+.register__submit-button:hover{
+  opacity: 1;
+}
+.register__next-button:hover{
+  opacity: 1;
+}
+.register__auth-link:hover{
+  opacity: 1;
+}
+}

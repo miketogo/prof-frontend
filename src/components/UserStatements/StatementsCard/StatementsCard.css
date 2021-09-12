@@ -1,0 +1,132 @@
+.statement-card{
+  display: flex;
+  flex-direction: column;
+  background: #222222;
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.statement-card_type_with-img {
+
+}
+
+.statement-card_type_without-img {
+
+}
+
+.statement-card__image {
+  height: 151px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.statement-card__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+  white-space: nowrap;
+  overflow: hidden;
+  color: #FFFFFF;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  margin: 14px 0 0 12px;
+
+}
+
+.statement-card__title_without-img {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+  white-space: nowrap;
+  overflow: hidden;
+  color: #FFFFFF;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  max-height: unset;
+  height: unset;
+  margin: 14px 0 0 12px;
+}
+
+.statement-card__status {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  margin: 0;
+  color: #A0A0A0;
+}
+
+.statement-card__status_green {
+  color: #2BE080;
+}
+
+.statement-card__status_red {
+  color: #FF3055;
+}
+
+.statement-card__status_blue {
+  color: #3456F3;
+}
+
+.statement-card__date {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: #A0A0A0;
+}
+
+.statement-card__info-container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 12px 0;
+  justify-content: space-between;
+}
+
+@media (max-width: 1175px) {}
+
+@media (max-width: 586px) {
+  .statement-card__title_without-img {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+    white-space: nowrap;
+    overflow: hidden;
+    color: #FFFFFF;
+    text-overflow: ellipsis;
+    max-width: 80%;
+    max-height: unset;
+    height: unset;
+    margin: 14px 0 0 12px;
+  }
+  .statement-card {
+
+    padding-bottom: 14px;
+    margin-top: 21px;
+  }
+  .statement-card:first-of-type {
+    margin-top: 0;
+  }
+  .statement-card_type_without-img{
+
+    display: flex;
+    flex-direction: column;
+    background: #222222;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    max-height: 67px;
+  }
+}

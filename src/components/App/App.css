@@ -1,0 +1,44 @@
+.app{
+  font-family: Inter, Arial, sans-serif;
+  background: #202020;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+input, textarea, select {
+  -webkit-appearance: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+   box-shadow: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.api-error{
+  width: calc(100% - 20px - 20px);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  margin: 6px 0 0;
+  color: #EE3465;
+}
+.app__preloader{
+  display: flex;
+  width: 100%;
+  margin: 200px 0 0;
+  align-items: center;
+  justify-content: center;
+}
+@-webkit-keyframes autofill {
+  to {
+    color: #fff;
+    background: #202020;
+    caret-color: inherit;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px #202020 inset; /* можно изменить на любой вариант цвета */
+    -webkit-text-fill-color: #fff;
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}

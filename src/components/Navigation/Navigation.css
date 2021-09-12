@@ -1,0 +1,28 @@
+.navigation__link{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  /* identical to box height, or 138% */
+  margin: 0 0 0 16px;
+  padding: 0;
+  text-decoration: none;
+  color: #FFFFFF;
+
+}
+
+.navigation__link:first-of-type{
+  margin: 0;
+}
+.navigation{
+  font-family: Inter, Arial, sans-serif;
+}
+.navigation__link_active{
+  font-weight: 500;
+}
+
+@media (max-width: 1175px){
+  .navigation{
+    visibility: hidden;
+  }
+}

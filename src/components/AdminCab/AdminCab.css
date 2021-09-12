@@ -1,0 +1,122 @@
+.usercab {
+  font-family: Inter, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 70px - 70px);
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.usercab__links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  grid-template-rows: 217px;
+  gap: 27px;
+  grid-auto-rows: 217px;
+  border-top: solid 1px #FFFFFF;
+  padding-top: 50px;
+}
+
+.usercab__link {
+  background: #222222;
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  text-decoration: none;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px 70px 25px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.usercab__link:hover {
+  opacity: 0.8;
+}
+
+.usercab__link-title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  margin: 35px 0 0;
+  color: #FFFFFF;
+}
+
+.usercab__link-icon {
+  width: 105px;
+  height: 105px;
+}
+
+.usercab__link-icon_type_statement {
+  padding-right: -23px;
+  position: relative;
+}
+
+.usercab__title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+  text-align: center;
+
+  margin: 0 auto 15px;
+  max-width: calc(100vw - 14px - 14px);
+  width: 100%;
+  white-space: pre-wrap;
+  overflow: hidden;
+  color: #FFFFFF;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1175px) {
+  .usercab {
+    width: calc(100vw - 30px - 30px);
+  }
+}
+
+@media (max-width: 586px) {
+  .usercab {
+    width: calc(100vw - 14px - 14px);
+  }
+  .usercab__links {
+    display: flex;
+    flex-direction: column;
+    border-top: solid 1px #FFFFFF;
+    padding-top: 21px;
+    gap: 0;
+  }
+  .usercab__link-icon {
+    width: 37px;
+    height: 37px;
+  }
+  .usercab__link{
+    margin-bottom: 21px;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 15px 20px 15px 13px;
+    transition: opacity 0.3s ease-in-out;
+    justify-content: space-between;
+  }
+  .usercab__link:last-of-type{
+    margin: 0;
+  }
+  .usercab__link-title {
+    /* identical to box height */
+    margin: 0;
+  }
+  .usercab__title {
+
+    /* identical to box height */
+    text-align: left;
+    color: #FFFFFF;
+    margin: 0 0 13px;
+  }
+  .usercab__link:hover {
+    opacity: 1;
+  }
+}
