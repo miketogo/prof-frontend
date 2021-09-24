@@ -13,6 +13,8 @@ import './AllUsers.css';
 
 function AllUsers(props) {
   const [isSelectOpen, setSelectOpen] = React.useState(false);
+  const [isStatsOpen, setStatsOpen] = React.useState(false);
+  const [secretNumber, setSecretNumber] = React.useState(0);
   const [isSelectHouseOpen, setSelectHouseOpen] = React.useState(false);
   const [selectedHouse, setSelectedHouse] = React.useState('Все');
   const [searchValue, setSearchValue] = React.useState('');
@@ -20,8 +22,9 @@ function AllUsers(props) {
 
   React.useEffect(() => {
     setFilteredUsers(props.allAdminsUsers)
-  }, [props.allAdminsUsers])
 
+  }, [props.allAdminsUsers])
+  console.log(`Всего пользователей:`)
   function handleSelectOpen() {
     if (isSelectOpen) {
       setSelectOpen(false)
@@ -30,7 +33,6 @@ function AllUsers(props) {
       setSelectOpen(true)
     }
   }
-
 
 
   function handleSearchChange(e) {
@@ -61,6 +63,17 @@ function AllUsers(props) {
     setSelectedHouse(name)
     setSelectHouseOpen(false)
   }
+  function handleSecretOpen() {
+    setSecretNumber(secretNumber + 1)
+    if (secretNumber === 5) {
+      setStatsOpen(true)
+
+    } else if (secretNumber > 7) {
+      setSecretNumber(0)
+      setStatsOpen(false)
+    }
+
+  }
 
 
 
@@ -70,7 +83,39 @@ function AllUsers(props) {
       <div className={`usercomplaints__bgblacker ${isSelectHouseOpen ? 'usercomplaints__bgblacker_active' : ''}`} onClick={handleSelectHouseOpen}></div>
       <Header isAdmin={props.isAdmin} handleMenuOpenClick={props.handleMenuOpenClick} loggedIn={props.loggedIn} />
       <div className="usercomplaints">
-        <h2 className="usercomplaints__title">Все пользователи</h2>
+        <h2 onClick={handleSecretOpen} className="usercomplaints__title unselectable">Все пользователи</h2>
+        {isStatsOpen && filteredUsers &&
+          <div className="usercomplaints__stats">
+            <p className="usercomplaints__stat">Всего пользователей: {filteredUsers && filteredUsers.length}</p>
+            <p className="usercomplaints__stat">С подтверждённым email: {filteredUsers && filteredUsers.filter((item) => {
+              if (item.emailVerified) {
+                return true
+              }
+              return false
+            }).length}</p>
+            <p className="usercomplaints__stat">С подключенным телеграм: {filteredUsers && filteredUsers.filter((item) => {
+              if (item.telegram_id !== '') {
+                return true
+              }
+              return false
+            }).length}</p>
+            <p className="usercomplaints__stat">Подавали счётчики: {filteredUsers && filteredUsers.filter((item) => {
+              if (item.meterReadings.length !== 0) {
+                return true
+              }
+              return false
+            }).length}</p>
+            <br />
+            {props.houses.map((item, i) => (
+              <p className="usercomplaints__stat">{item.name}: {filteredUsers && filteredUsers.filter((itm) => {
+                if (itm.house.name === item.name) {
+                  return true
+                }
+                return false
+              }).length}</p>
+            ))}
+          </div>
+        }
         {/* <div>
           <input></input>
         </div> */}
@@ -104,6 +149,7 @@ function AllUsers(props) {
 
           return 0;
         })} selectedHouse={selectedHouse} />
+
 
       </div>
     </>
