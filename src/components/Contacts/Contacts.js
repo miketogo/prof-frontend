@@ -39,8 +39,30 @@ function Contacts(props) {
               Офис (9-18 пн-пт) - <a className="contacts__chapter-text" href="tel:88124949723">8 (812) 494-97-23</a>
             </p>
           </div>
+          <div className="contacts__chapter-container">
+            <h3 className="contacts__chapter-title">Ярославский 78</h3>
+            <p className="contacts__chapter-text">
+              Круглосуточная диспетчерская служба - <a className="contacts__chapter-text" href="tel:88126767641">8 (812) 676-76-41</a>
+              <br />
+              <br />
+              Управляющий домом - Сергей Тамерланович <a className="contacts__chapter-text" href="tel:+79291122501">+7 (929) 112-25-01</a>
+              <br />
+              <br />
+              Офис (8:30-17:30 пн-пт) - <a className="contacts__chapter-text" href="tel:88126767640">8 (812) 676-76-40</a>
+            </p>
+          </div>
         </div>
-
+        <div className="contacts__two-chapters-container">
+          <div className="contacts__chapter-container">
+            <h3 className="contacts__chapter-title">Ярославский 95</h3>
+            <p className="contacts__chapter-text">
+              Круглосуточная диспетчерская служба - <a className="contacts__chapter-text" href="tel:88122965424">8 (812) 296-54-24</a>
+              <br />
+              <br />
+              Управляющий домом - Алексей Евгеньевич  (9-17 пн-пт) <a className="contacts__chapter-text" href="tel:+79626865118">+7 (962) 686-51-18</a>
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );

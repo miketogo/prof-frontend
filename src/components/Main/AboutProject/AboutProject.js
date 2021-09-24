@@ -9,7 +9,7 @@ import React from "react";
 
 function AboutProject(props) {
   return (
-    <div className="about-project" id="about-project">
+    <div className="about-project" id="why-us-better">
       <h2 className="about-project__title">Почему для многоквартирного дома лучше УК, чем ТСЖ?</h2>
       <div className="about-project__two-chapters-container">
         <div className="about-project__chapter-container">
@@ -52,10 +52,10 @@ function AboutProject(props) {
       <div className="about-project__graph">
 
         <div className="about-project__graph-green">
-          <p className="about-project__graph-text-green">~2000₽</p>
+          <p className="about-project__graph-text-green">~300₽</p>
         </div>
         <div className="about-project__graph-gray">
-          <p className="about-project__graph-text-gray">~6000₽ и более</p>
+          <p className="about-project__graph-text-gray">~1000₽ и более</p>
         </div>
         <p className="about-project__graph-subtitle">С УК</p>
         <p className="about-project__graph-subtitle">С ТСЖ</p>

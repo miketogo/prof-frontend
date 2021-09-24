@@ -33,7 +33,7 @@ function Profile(props) {
     <>
       <Header isAdmin={props.isAdmin} handleMenuOpenClick={props.handleMenuOpenClick} loggedIn={props.loggedIn} />
       <div className="profile">
-        <h2 className="profile__greeting">Здраствуйте, {props.currentUser.firstname}</h2>
+        <h2 className="profile__greeting">Здравствуйте, {props.currentUser.firstname}</h2>
 
         <>
           {!props.isEditProfileClicked ? (

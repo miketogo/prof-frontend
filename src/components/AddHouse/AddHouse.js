@@ -457,7 +457,7 @@ function AddHouse(props) {
           <>
             <div className="register__step-container">
               <p className="register__step-back" onClick={handleBack}>Назад</p>
-              <p className="register__step">Шаг 3/4</p>
+              <p className="register__step">Шаг 4/4</p>
             </div>
             <div className="register__input-container">
               <p className="register__input-title">Введите количество парадных</p>
@@ -480,7 +480,7 @@ function AddHouse(props) {
               if (item.validState === false) {
                 return item
               } return false
-            }).length === 0) ? false : true}>Далее</button>
+            }).length === 0) ? false : true}>Добавить дом</button>
 
 
           </>

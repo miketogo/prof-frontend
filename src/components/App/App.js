@@ -1,7 +1,7 @@
 import '../../index.css';
 import './App.css';
 import React, { Suspense } from "react";
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect, useHistory } from 'react-router-dom';
 import { usePageVisibility } from 'react-page-visibility';
 
 
@@ -31,8 +31,9 @@ import Footer from '../Footer/Footer';
 
 
 import Preloader from '../Preloader/Preloader';
+import Register from '../Register/Register';
 
-const Register = React.lazy(() => import('../Register/Register'));
+
 const Login = React.lazy(() => import('../Login/Login'));
 const PageNotFound = React.lazy(() => import('../PageNotFound/PageNotFound'));
 const EmailNotVerified = React.lazy(() => import('../EmailNotVerified/EmailNotVerified'));
@@ -77,7 +78,7 @@ function App(props) {
   const [isSurveyPassed, setSurveyPassed] = React.useState(false);
   const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
   // const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
-
+  const history = useHistory();
   function handleResize() {
     setTimeout(setScreenWidth, 500, window.innerWidth)
 
@@ -133,7 +134,13 @@ function App(props) {
           console.log(err)
         })
         mainApi.getAllUsers(jwt).then((res) => {
-          setAllAdminsUsers(res.users)
+          let users = res.users.filter((item) => {
+            if (item.display !== "not_display"){
+              return true
+            }
+            return false
+          })
+          setAllAdminsUsers(users)
         }).catch((err) => {
           console.log(err)
         })
@@ -176,7 +183,13 @@ function App(props) {
         console.log(err)
       })
       mainApi.getAllUsers(jwt).then((res) => {
-        setAllAdminsUsers(res.users)
+        let users = res.users.filter((item) => {
+          if (item.display !== "not_display"){
+            return true
+          }
+          return false
+        })
+        setAllAdminsUsers(users)
       }).catch((err) => {
         console.log(err)
       })
@@ -357,16 +370,29 @@ function App(props) {
     data.append("text", text);
     setPreloaderVisible(true)
     const jwt = localStorage.getItem("jwt");
-    mainApi.addComplaint(jwt, data).then((res) => {
 
-      mainApi.getUserAppeals(jwt).then((res) => {
-        setAllAppeals(res.appeals.reverse())
-        handleAddComplaintCloseClick()
-        setPreloaderVisible(false)
-      })
-        .catch((err) => {
+    mainApi.addComplaint(jwt, data).then((res) => {
+      if (isAdmin){
+        mainApi.getAllAppeals(jwt).then((res) => {
+
+          setAllAdminsAppeals(res.appeals.reverse())
+          handleAddComplaintCloseClick()
+          setPreloaderVisible(false)
+        }).catch((err) => {
           console.log(err)
         })
+      }
+      else {
+        mainApi.getUserAppeals(jwt).then((res) => {
+          setAllAppeals(res.appeals.reverse())
+          handleAddComplaintCloseClick()
+          setPreloaderVisible(false)
+        })
+          .catch((err) => {
+            console.log(err)
+          })
+      }
+
     })
       .catch((err) => {
         setPreloaderVisible(false)
@@ -518,6 +544,7 @@ function App(props) {
         mainApi.getHouses()
           .then((res) => {
             setHouses(res.houses)
+            history.push('/')
           })
           .catch((err) => {
             console.log(err);
@@ -541,11 +568,7 @@ function App(props) {
                 &&
                 <Switch>
                   <Route path="/signup" >
-
-                    <Suspense fallback={<div className='app__preloader'><Preloader /></div>}>
                       <Register onRegister={handleRegister} apiErrorMessage={apiErrorMessage} houses={houses} />
-                    </Suspense>
-
                   </Route>
                   <Route path="/signin" >
                     <Suspense fallback={<div className='app__preloader'><Preloader /></div>}>

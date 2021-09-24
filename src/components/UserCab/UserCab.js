@@ -17,7 +17,7 @@ function UserCab(props) {
     <Header isAdmin={props.isAdmin} handleMenuOpenClick={props.handleMenuOpenClick} loggedIn={props.loggedIn} />
     <div className="usercab">
 
-      <h2 className="usercab__title">Здраствуйте, {props.currentUser.firstname}</h2>
+      <h2 className="usercab__title">Здравствуйте, {props.currentUser.firstname}</h2>
       <div className="usercab__links">
         <Link to="/my-complaints" className="usercab__link">
           <img className="usercab__link-icon" alt="Иконка жалоб" src={complaitIcon}></img>

@@ -471,6 +471,20 @@ function SurveyForm(props) {
     handleNext()
     props.handleSurvey(houseMenagmentValue, addressValue, secondnameValue, firstnameValue, emailValue, flatValue, phoneValue, monthPayValue);
   };
+  function handlePhoneDelite(e) {
+    if (e.keyCode === 8 && e.target.value.replace(/\D/g, '').length === 1) {
+      setPhoneValue('')
+    }
+    if (e.keyCode === 8 && e.target.value.replace(/\D/g, '').length < 11) {
+      setPhoneValidity({
+        errorMassage: '',
+        validState: false
+      });
+    }
+    handleEnter(e)
+
+  }
+
   return (
     <div className="register">
 
@@ -519,7 +533,7 @@ function SurveyForm(props) {
                 </div>
                 <div className="register__input-container">
                   <p className="register__input-title">Номер телефона</p>
-                  <input onKeyDown={handleEnter} className="register__input" name="phone" type="tel" required value={phoneValue} onChange={handlePhoneChange} ></input>
+                  <input  className="register__input" name="phone" type="tel" required value={phoneValue} onChange={handlePhoneChange} onKeyDown={handlePhoneDelite} ></input>
                   <span className="register__error">{phoneValidity.errorMassage !== '' ? phoneValidity.errorMassage : ''}</span>
                 </div>
                 <div className="register__input-container">

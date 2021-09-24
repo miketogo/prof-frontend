@@ -139,7 +139,7 @@ function AddComplaintPopup(props) {
                 <span className="add-complaint-popup__error">{!fileValidity.validState && fileValidity.errorMassage}</span>
               </div>
               <span className="api-error">{props.apiErrorMessage}</span>
-              <button type="submit" className={`add-complaint-popup__submit-button ${(textValidity.validState) ? "add-complaint-popup__submit-button_active" : "add-complaint-popup__submit-button_disabled"}`} disabled={(textValidity.validState) ? false : true}>Отправить</button>}
+              <button type="submit" className={`add-complaint-popup__submit-button ${(textValidity.validState) ? "add-complaint-popup__submit-button_active" : "add-complaint-popup__submit-button_disabled"}`} disabled={(textValidity.validState) ? false : true}>Отправить</button>
             </>}
         </form>
         <div className={`add-complaint-popup_bg ${props.isAddComplaintOpen ? 'add-complaint-popup_bg_active' : ''}`} onClick={props.isPreloaderVisible ? '' : handleClose}> </div>

@@ -10,7 +10,10 @@ function CounterCards(props) {
 
   return (
     <div className='counter-cards'>
-      { props.allAdminsUsers && props.selectedHouse === 'Все' && props.allAdminsUsers.length === 0 && <p className='counter-cards__text'>Не найдено пользователей</p>}
+      { props.allAdminsUsers && props.selectedHouse === 'Все' && (props.allAdminsUsers.length === 0 ||   props.allAdminsUsers.filter((item) => {
+        if( item.meterReadings &&item.meterReadings.length > 0) return true
+        return false
+      }).length === 0 )&&<p className='counter-cards__text'>Не найдено показаний счётчиков</p>}
 
       { props.allAdminsUsers && props.selectedHouse === 'Все' &&  props.allAdminsUsers.map((item, i) => (
         // console.log(item)
@@ -25,10 +28,10 @@ function CounterCards(props) {
 
 
       { props.allAdminsUsers  && props.selectedHouse !== 'Все' &&  props.allAdminsUsers.filter((item) => {
-        if (item.house !== null && item.house.name === props.selectedHouse) {
-          return item
+        if (item.house !== null && item.house.name === props.selectedHouse && item.meterReadings &&item.meterReadings.length > 0) {
+          return true
         } return false
-      }).length === 0 && <p className='counter-cards__text'>В доме {props.selectedHouse} не найдено пользователей</p>}
+      }).length === 0 && <p className='counter-cards__text'>В доме {props.selectedHouse} не найдено показаний счётчиков</p>}
 
       { props.allAdminsUsers && props.selectedHouse !== 'Все' &&
         props.allAdminsUsers.map((item, i) => (

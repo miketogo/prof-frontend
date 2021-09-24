@@ -9,7 +9,7 @@ import React from "react";
 
 function WhyUs(props) {
   return (
-    <div className="why-us" id="techs">
+    <div className="why-us" id="why-us">
       <div className="why-us__container">
         <h2 className="why-us__title">Почему именно наша УК?</h2>
         <h3 className="why-us__subtitle">Более 5 лет</h3>

@@ -10,7 +10,7 @@ function SurveyCards(props) {
 
   return (
     <div className='survey-cards'>
-      { props.allSurveyResults && props.allSurveyResults.length === 0 && <p className='survey-cards__text'>Не найдено результатов опроса</p>}
+      { props.allSurveyResults && props.allSurveyResults.length === 0 && <p className='survey-cards__text'>Не найдено отправленных писем</p>}
 
       { props.allSurveyResults &&  props.allSurveyResults.map((item, i) => (
         // console.log(item)

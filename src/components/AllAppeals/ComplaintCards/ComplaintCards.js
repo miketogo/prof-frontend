@@ -10,7 +10,7 @@ function ComplaintCards(props) {
 
   return (
     <div className='complaint-cards'>
-      {props.allAppeals && props.allAppeals.length === 0 && <p className='complaint-cards__text'>Нет обращений</p>}
+      {props.allAppeals && props.allAppeals.length === 0 && props.selectedType === 'Все' && props.selectedHouse === 'Все' && <p className='complaint-cards__text'>Нет обращений</p>}
 
       {props.allAppeals && props.selectedType === 'Все' && props.selectedHouse === 'Все' && props.allAppeals.map((item, i) => (
         // console.log(item)

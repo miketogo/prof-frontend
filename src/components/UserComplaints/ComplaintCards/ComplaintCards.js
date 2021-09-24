@@ -14,7 +14,7 @@ function ComplaintCards(props) {
         if (item.type === 'complaint') {
           return item
         } return false
-      }).length === 0 && <p className='complaint-cards__text'>Вы ещё не оставляли жалоб</p>}
+      }).length === 0  &&  props.selectedType !== 'Ожидание' &&  props.selectedType !== 'В работе' &&  props.selectedType !== 'Выполнено' &&  props.selectedType !== 'Отклонено'&& <p className='complaint-cards__text'>Вы ещё не оставляли жалоб</p>}
 
       {props.allAppeals && props.selectedType === 'Все' && props.allAppeals.map((item, i) => (
         // console.log(item)

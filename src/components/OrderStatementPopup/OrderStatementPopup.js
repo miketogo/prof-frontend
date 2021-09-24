@@ -74,7 +74,7 @@ function OrderStatementPopup(props) {
                 Адрес: {props.currentUser && props.currentUser.house.city}, {props.currentUser && props.currentUser.house.address}, кв. {props.currentUser && props.currentUser.flat}<br />
               </p>
               <span className="api-error">{props.apiErrorMessage}</span>
-              <button type="submit" className={`add-complaint-popup__submit-button ${(selectValidity.validState) ? "add-complaint-popup__submit-button_active" : "add-complaint-popup__submit-button_disabled"}`} disabled={(selectValidity.validState) ? false : true}>Заказать</button>}
+              <button type="submit" className={`add-complaint-popup__submit-button ${(selectValidity.validState) ? "add-complaint-popup__submit-button_active" : "add-complaint-popup__submit-button_disabled"}`} disabled={(selectValidity.validState) ? false : true}>Заказать</button>
             </>}
         </form>
         <div className={`add-complaint-popup_bg ${props.isOrderStatementOpen ? 'add-complaint-popup_bg_active' : ''}`} onClick={props.isPreloaderVisible ? '' : handleClose}> </div>

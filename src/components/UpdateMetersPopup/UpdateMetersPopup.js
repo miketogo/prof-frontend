@@ -120,7 +120,7 @@ function UpdateMetersPopup(props) {
               </div>
               <span className="api-error">{props.apiErrorMessage}</span>
 
-              <button type="submit" className={`add-complaint-popup__submit-button ${(hotValidity.validState && coldValidity.validState) ? "add-complaint-popup__submit-button_active" : "add-complaint-popup__submit-button_disabled"}`} disabled={(hotValidity.validState && coldValidity.validState) ? false : true}>Обновить</button>}
+              <button type="submit" className={`add-complaint-popup__submit-button ${(hotValidity.validState && coldValidity.validState) ? "add-complaint-popup__submit-button_active" : "add-complaint-popup__submit-button_disabled"}`} disabled={(hotValidity.validState && coldValidity.validState) ? false : true}>Обновить</button>
             </>}
         </form>
         <div className={`add-complaint-popup_bg ${props.isUpdateMetersOpen ? 'add-complaint-popup_bg_active' : ''}`} onClick={props.isPreloaderVisible ? '' : handleClose}> </div>

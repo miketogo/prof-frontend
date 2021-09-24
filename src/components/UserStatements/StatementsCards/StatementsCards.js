@@ -14,7 +14,7 @@ function StatementsCards(props) {
         if (item.type === 'statement') {
           return item
         } return false
-      }).length === 0 && <p className='statement-cards__text'>Вы ещё не закывали справок</p>}
+      }).length === 0 &&  props.selectedType !== 'Ожидание' &&  props.selectedType !== 'В работе' &&  props.selectedType !== 'Доставлено' &&  props.selectedType !== 'Отклонено'&&<p className='statement-cards__text'>Вы ещё не заказывали справок</p>}
 
       {props.allAppeals && props.selectedType === 'Все' && props.allAppeals.map((item, i) => (
         // console.log(item)
